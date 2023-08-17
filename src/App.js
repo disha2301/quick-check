@@ -1,5 +1,6 @@
 import React from "react";
 import InputForm from "./components/InputForm";
+import qrCode from "./components/qrCode";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <div className="container mx-auto max-w-4xl bg-white rounded-md shadow">
         <div className="md:grid md:grid-cols-3">
           <InputForm />
-          <h1>Qr code</h1>
+          <qrCode />
         </div>
       </div>
     </div>

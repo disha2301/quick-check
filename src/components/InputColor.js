@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { SketchPicker } from "react-color";
+import { ChromePicker, SketchPicker } from "react-color";
 
 const InputColor = () => {
   const [color, setColor] = useState("#054080");
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
-  const handleColorChange = (newColor) => {
-    setColor(newColor.hex);
-  };
+  const handleChange = (color) => setColor(color.hex);
   return (
     <div>
       <label className="font-semibold text-md">Color</label>
@@ -19,8 +17,8 @@ const InputColor = () => {
         <span>{color}</span>
       </div>
       {displayColorPicker && ( // Use curly braces here
-        <div style={{ position: "absolute", zIndex: 1 }}>
-          <SketchPicker color={color} onChange={handleColorChange} />
+        <div className="absolute mt-2">
+          <ChromePicker color={color} onChange={handleChange} />
         </div>
       )}
     </div>
