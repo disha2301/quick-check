@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import InputForm from "./components/InputForm";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% h-screen pt-36 px-2">
+      <div className="container mx-auto max-w-4xl bg-white rounded-md shadow">
+        <div className="md:grid md:grid-cols-3">
+          <InputForm />
+          <h1>Qr code</h1>
+        </div>
+      </div>
     </div>
   );
 }
