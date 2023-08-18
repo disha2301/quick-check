@@ -38,7 +38,7 @@ const QrCode = () => {
           </button>
         </div>
       ) : (
-        <div className="text-gray-500">Your QrCode will showing here...</div>
+        <div className="text-gray-500">Your QrCode will be shown here...</div>
       )}
     </div>
   );
