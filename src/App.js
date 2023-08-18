@@ -1,9 +1,8 @@
-import React, { createContext, useState } from "react";
 import InputForm from "./components/InputForm";
 import QrCode from "./components/QrCode";
+import { createContext, useState } from "react";
 import axios from "axios";
 
-//create context
 export const InputContext = createContext();
 
 function App() {
@@ -11,11 +10,15 @@ function App() {
     url: "",
     color: "",
   });
+
   const [response, setResponse] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
   const config = {
-    header: { Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}` },
+    headers: {
+      Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
+    },
   };
 
   const bodyParameters = {
@@ -23,6 +26,7 @@ function App() {
     qrCategory: "url",
     text: inputValue.url,
   };
+
   const getQrCode = async () => {
     try {
       setLoading(true);
@@ -38,6 +42,7 @@ function App() {
       setLoading(false);
     }
   };
+
   const value = {
     inputValue,
     setInputValue,
@@ -46,8 +51,9 @@ function App() {
     loading,
     error,
   };
+
   return (
-    <div className="bg-gradient-to-r from-indigo-800 via-purple-700 to-purple-900 h-screen pt-36 px-2">
+    <div className="bg-gradient-to-r from-black via-indigo-800 to-purple-900 h-screen pt-36 px2">
       <div className="container mx-auto max-w-4xl bg-white rounded-md shadow">
         <div className="md:grid md:grid-cols-3">
           <InputContext.Provider value={value}>
